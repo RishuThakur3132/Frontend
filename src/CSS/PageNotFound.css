@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+.page-not-found {
+  min-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  padding: 50px 20px;
+}
+
+.not-found-container {
+  width: 100%;
+  max-width: 850px;
+
+  text-align: center;
+}
+
+
+/* ================= 404 ================= */
+
+.illustration {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  height: 280px;
+
+  margin-bottom: 25px;
+}
+
+.number {
+  font-size: 210px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  color: #0c0c0c;
+}
+
+
+/* ================= ZERO ================= */
+
+.zero {
+  width: 150px;
+  height: 150px;
+
+  border: 15px solid #030303;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.zero-inner {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  background: white;
+}
+
+
+/* ================= HEADING ================= */
+
+.not-found-container h1 {
+  margin: 10px 0 15px;
+
+  font-size: 48px;
+
+  font-weight: 700;
+
+  color: #101828;
+}
+
+
+/* ================= TEXT ================= */
+
+.not-found-container p {
+  margin: 0 0 30px;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: #98a2b3;
+}
+
+
+/* ================= BUTTON ================= */
+
+.home-button {
+  display: inline-block;
+
+  padding: 15px 38px;
+
+  background: #060606;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 30px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background: #070707;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(32, 201, 151, 0.25);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .illustration {
+    height: 180px;
+  }
+
+  .number {
+    font-size: 120px;
+  }
+
+  .zero {
+    width: 90px;
+    height: 90px;
+
+    border-width: 10px;
+  }
+
+  .zero-inner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .not-found-container h1 {
+    font-size: 32px;
+  }
+
+  .not-found-container p {
+    font-size: 14px;
+  }
+
+  .home-button {
+    padding: 13px 30px;
+  }
+}
