@@ -208,7 +208,7 @@ function Cart() {
                       removeFromCart(item.id)
                     }
                   >
-                    Remove
+                    Removes
                   </button>
 
                 </div>
