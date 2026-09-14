@@ -20,10 +20,8 @@ function Login() {
       return;
     }
 
-    // Saved users
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Find user
     const user = users.find(
       (u) =>
         u.email === email &&
@@ -35,7 +33,6 @@ function Login() {
       return;
     }
 
-    // Current logged-in user save karo
     localStorage.setItem(
       "currentUser",
       JSON.stringify(user)
@@ -43,7 +40,6 @@ function Login() {
 
     localStorage.setItem("isLogged", "true");
 
-    // Profile par jao
     navigate("/profile");
   };
 

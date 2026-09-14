@@ -5,10 +5,8 @@ import Footer from "../Components/Footer.jsx";
 function About() {
   return (
     <>
-      {/* Header */}
       <Header />
 
-      {/* About Section */}
       <main className="about-page">
 
         <section className="about-hero">
@@ -51,7 +49,6 @@ function About() {
 
         </section>
 
-        {/* Why Choose Us */}
         <section className="why-us">
           <h2>Why Choose CAR 24?</h2>
 
@@ -88,7 +85,6 @@ function About() {
 
       </main>
 
-      {/* Footer */}
       <Footer />
     </>
   );

@@ -18,22 +18,18 @@ function Signup() {
     setError("");
     setSuccess("");
 
-    // Empty fields check
     if (!name || !email || !password) {
       setError("Please fill all fields");
       return;
     }
 
-    // Password length
     if (password.length < 6) {
       setError("Password must be at least 6 characters");
       return;
     }
 
-    // Existing users
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Check email
     const existingUser = users.find(
       (user) => user.email === email
     );
@@ -43,7 +39,6 @@ function Signup() {
       return;
     }
 
-    // Create unique ID automatically
     const newUser = {
       id: Date.now().toString(),
       name: name,
@@ -51,20 +46,16 @@ function Signup() {
       password: password,
     };
 
-    // Add new user
     users.push(newUser);
 
-    // Save users
     localStorage.setItem("users", JSON.stringify(users));
 
     setSuccess("Account created successfully!");
 
-    // Clear form
     setName("");
     setEmail("");
     setPassword("");
 
-    // Go to login
     setTimeout(() => {
       navigate("/login");
     }, 1200);
@@ -82,7 +73,6 @@ function Signup() {
 
         <form onSubmit={handleSignup}>
 
-          {/* Name */}
           <div className="input-group">
             <label>Name</label>
 
@@ -94,7 +84,6 @@ function Signup() {
             />
           </div>
 
-          {/* Email */}
           <div className="input-group">
             <label>Email</label>
 
@@ -106,7 +95,6 @@ function Signup() {
             />
           </div>
 
-          {/* Password */}
           <div className="input-group">
             <label>Password</label>
 
@@ -118,14 +106,12 @@ function Signup() {
             />
           </div>
 
-          {/* Error */}
           {error && (
             <p className="signup-error">
               {error}
             </p>
           )}
 
-          {/* Success */}
           {success && (
             <p className="signup-success">
               {success}

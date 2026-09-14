@@ -5,10 +5,8 @@ function Footer() {
   return (
     <footer className="footer">
 
-      {/* Footer Top */}
       <div className="footer-container">
 
-        {/* About */}
         <div className="footer-column">
           <div className="footer-logo">
              <span>CAR 24</span>
@@ -27,7 +25,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-column">
           <h3>Quick Links</h3>
 
@@ -36,7 +33,6 @@ function Footer() {
           <Link to="/contact">Contact</Link>
         </div>
 
-        {/* Services */}
         <div className="footer-column">
           <h3>Our Services</h3>
 
@@ -46,7 +42,6 @@ function Footer() {
           <Link to="/cars">Test Drive</Link>
         </div>
 
-        {/* Contact */}
         <div className="footer-column">
           <h3>Contact Us</h3>
 
@@ -57,7 +52,6 @@ function Footer() {
 
       </div>
 
-      {/* Footer Bottom */}
       <div className="footer-bottom">
 
         <p>

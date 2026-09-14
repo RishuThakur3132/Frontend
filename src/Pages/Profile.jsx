@@ -5,20 +5,16 @@ import { useState } from "react";
 function Profile() {
   const navigate = useNavigate();
 
-// Current logged-in user
   const [user] = useState(
     JSON.parse(localStorage.getItem("currentUser")) || null
   );
 
   const handleLogout = () => {
 
-    // Login status remove
     localStorage.removeItem("isLogged");
 
-    // Current user remove
     localStorage.removeItem("currentUser");
 
-    // Home page
     navigate("/");
   };
 
@@ -26,17 +22,14 @@ function Profile() {
   return (
     <div className="profile-page">
 
-      {/* ================= PROFILE HEADER ================= */}
       <div className="profile-header">
 
         <div className="profile-left">
 
-          {/* Avatar */}
           <div className="profile-avatar">
             {user.name.charAt(0).toUpperCase()}
           </div>
 
-          {/* User Information */}
           <div className="profile-title">
             <h1>{user.name}</h1>
             <p>Welcome back to Car 24</p>
@@ -44,7 +37,6 @@ function Profile() {
 
         </div>
 
-        {/* Edit Profile */}
         <button
           className="edit-profile-btn"
           onClick={() => alert("Edit Profile")}
@@ -54,26 +46,22 @@ function Profile() {
 
       </div>
 
-      {/* ================= PERSONAL INFORMATION ================= */}
       <div className="profile-card">
 
         <h2>Personal Information</h2>
 
         <div className="information-grid">
 
-          {/* User ID */}
           <div className="info-box">
             <span className="info-label">User ID</span>
             <strong>{user.id}</strong>
           </div>
 
-          {/* Full Name */}
           <div className="info-box">
             <span className="info-label">Full Name</span>
             <strong>{user.name}</strong>
           </div>
 
-          {/* Email */}
           <div className="info-box email-box">
             <span className="info-label">Email</span>
             <strong>{user.email}</strong>
@@ -83,12 +71,10 @@ function Profile() {
 
       </div>
 
-      {/* ================= ACCOUNT ================= */}
       <div className="account-section">
 
         <h2>Account</h2>
 
-        {/* Favourite Cars */}
         <div
           className="account-item"
           onClick={() => navigate("/favourite-cars")}
@@ -105,7 +91,6 @@ function Profile() {
           <span className="account-arrow">›</span>
         </div>
 
-        {/* Car Enquiries */}
         <div
           className="account-item"
           onClick={() => navigate("/enquiries")}
@@ -122,7 +107,6 @@ function Profile() {
           <span className="account-arrow">›</span>
         </div>
 
-        {/* Settings */}
         <div
           className="account-item"
           onClick={() => navigate("/settings")}
@@ -141,7 +125,6 @@ function Profile() {
 
       </div>
 
-      {/* ================= LOGOUT ================= */}
       <div className="logout-section">
 
         <button

@@ -7,7 +7,6 @@ function PageNotFound() {
 
       <div className="not-found-container">
 
-        {/* 404 Illustration */}
         <div className="illustration">
 
           <div className="number four">4</div>
@@ -20,17 +19,14 @@ function PageNotFound() {
 
         </div>
 
-        {/* Heading */}
         <h1>Page Not Found</h1>
 
-        {/* Description */}
         <p>
           We're sorry, the page you requested could not be found.
           <br />
           Please go back to the homepage.
         </p>
 
-        {/* Home Button */}
         <Link to="/" className="home-button">
           GO HOME
         </Link>

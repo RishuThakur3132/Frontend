@@ -15,7 +15,6 @@ function Contact() {
 
         <div className="contact-box">
 
-          {/* Left Side */}
           <div className="contact-details">
             <h2>Get In Touch</h2>
 
@@ -40,7 +39,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* Right Side */}
           <div className="contact-form">
             <h2>Send Message</h2>
 
