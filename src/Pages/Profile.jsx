@@ -6,7 +6,7 @@ function Profile() {
   const navigate = useNavigate();
 
 // Current logged-in user
-  const [user, setUser] = useState(
+  const [user] = useState(
     JSON.parse(localStorage.getItem("currentUser")) || null
   );
 
@@ -25,17 +25,6 @@ function Profile() {
 
   return (
     <div className="profile-page">
-
-      {/* ================= BACK BUTTON ================= */}
-      <div className="back-section">
-        <button
-          className="premium-back-btn"
-          onClick={() => navigate(-1)}
-        >
-          <span className="back-arrow"></span>
-          <span>Back</span>
-        </button>
-      </div>
 
       {/* ================= PROFILE HEADER ================= */}
       <div className="profile-header">

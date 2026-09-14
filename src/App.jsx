@@ -7,7 +7,7 @@ import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import PageNotFound from "./Pages/PageNotFound.jsx";
 import Profile from "./Pages/Profile.jsx";
-import Cart from "./Pages/Cart";
+import Details from "./Pages/Details.jsx";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
     <Route path="Contact" element={<Contact />} />
     <Route path="*" element={<PageNotFound/>}/>
     <Route path="/Profile" element={<Profile/>}/>
-    <Route path="/cart" element={<Cart />} />
+    <Route path="/Details/:id" element={<Details />} />
     </Routes>
     </div>
 

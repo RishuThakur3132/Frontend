@@ -1,45 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import { car as Car } from "./cars";
 import "./CSS/CarCards.css";
+import { car } from "./cars.js";
 
 function CarCards() {
   const navigate = useNavigate();
 
-  const addToCart = (item) => {
-    const cart = JSON.parse(
-      localStorage.getItem("cart") || "[]"
-    );
-
-    const alreadyAdded = cart.some(
-      (cartItem) => cartItem.id === item.id
-    );
-
-    if (alreadyAdded) {
-      alert("Car already added to Cart 🛒");
-      return;
-    }
-
-    localStorage.setItem(
-      "cart",
-      JSON.stringify([...cart, item])
-    );
-
-    alert(`${item.brand} ${item.model} Added to Cart 🛒`);
-  };
-
-  const buyNow = (item) => {
-    navigate(`/buy/${item.id}`);
-  };
-
   return (
     <>
-      {Car.map((item) => (
-        <div className="car-card" key={item.id}>
+      {car.map((car) => (
+        <div className="car-card" key={car.id}>
 
           <div className="car-image-box">
             <img
-              src={item.image}
-              alt={`${item.brand} ${item.model}`}
+              src={car.image}
+              alt={`${car.brand} ${car.model}`}
               className="car-image"
             />
           </div>
@@ -47,56 +21,44 @@ function CarCards() {
           <div className="car-details">
 
             <div className="car-header">
-              <h2>{item.brand}</h2>
+              <h2>{car.brand}</h2>
 
               <span className="rating">
-                ⭐ {item.rating}
+                ⭐ {car.rating}
               </span>
             </div>
 
-            <h3>{item.model}</h3>
+            <h3>{car.model}</h3>
 
             <p className="year">
-              {item.year}
+              {car.year}
             </p>
 
             <div className="car-info">
-              <span>⛽ {item.fuelType}</span>
-              <span>⚙️ {item.transmission}</span>
-              <span>🚙 {item.bodyType}</span>
+              <span>⛽ {car.fuelType}</span>
+              <span>⚙️ {car.transmission}</span>
+              <span>🚙 {car.bodyType}</span>
             </div>
 
             <p className="location">
-              📍 {item.location}
+              📍 {car.location}
             </p>
 
             <p className="engine">
-              🔧 {item.engine}
+              🔧 {car.engine}
             </p>
 
             <p className="power">
-              ⚡ {item.horsepower} HP
+              ⚡ {car.horsepower} HP
             </p>
 
             <div className="price">
-              ₹ {item.price}
+              ₹ {car.price}
             </div>
 
             <div className="car-buttons">
-
-              <button
-                className="buy-btn"
-                onClick={() => buyNow(item)}
-              >
-                Buy Now
-              </button>
-
-              <button
-                className="cart-btn"
-                onClick={() => addToCart(item)}
-              >
-                🛒 Add to Cart
-              </button>
+              <button onClick={() => navigate(`Details/${car.id}`)}
+              className="buy-btn"> Buy Now</button>
 
             </div>
 

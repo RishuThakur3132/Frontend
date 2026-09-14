@@ -69,17 +69,6 @@ function Header() {
             </NavLink>
           </li>
 
-         <li className="icon">
-            <NavLink
-              to="/cart"
-              className={({ isActive }) =>
-                isActive ? "nav-item active" : "nav-item"
-              }
-            >
-              Cart
-            </NavLink>
-          </li>
-
           {!isLogged ? (
             <li className="icon">
               <NavLink
@@ -102,15 +91,6 @@ function Header() {
                 >
                   Profile
                 </NavLink>
-              </li>
-
-              <li className="icon">
-                <button
-                  onClick={handleLogout}
-                  className="logout-btn"
-                >
-                  Logout
-                </button>
               </li>
             </>
           )}
