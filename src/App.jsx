@@ -8,11 +8,12 @@ import Contact from "./Pages/Contact.jsx";
 import PageNotFound from "./Pages/PageNotFound.jsx";
 import Profile from "./Pages/Profile.jsx";
 import Details from "./Pages/Details.jsx";
+import Cart from "./Pages/Cart.jsx";
 
 function App() {
   return (
    <div>
-    <Routes>
+   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="Login" element={<Login />} />
     <Route path="SignUp" element={<Signup />} />
@@ -21,7 +22,8 @@ function App() {
     <Route path="*" element={<PageNotFound/>}/>
     <Route path="/Profile" element={<Profile/>}/>
     <Route path="/Details/:id" element={<Details />} />
-    </Routes>
+    <Route path="/Cart" element={<Cart />} />
+   </Routes>
     </div>
 
   );

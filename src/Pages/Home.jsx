@@ -1,40 +1,69 @@
-import CarCards from "../carCards.jsx"
 import Header from "../Components/Header.jsx";
 import Footer from "../Components/Footer.jsx";
+import CarCards from "../carCards.jsx";
+import "../CSS/Home.css";
+
 function Home() {
-    return(
-        <div className="home-page">
+
+  return (
+    <div className="home-page">
+
       <Header />
+
       <section className="hero">
-        <div className="hero-text">
+
+        <div className="hero-content">
+
+          <p className="hero-small">
+            PREMIUM CAR COLLECTION
+          </p>
+
           <h1>
-            Find Your <span>Dream Car</span>
+            Find Your
+            <span> Dream Car</span>
           </h1>
 
+          <p className="hero-description">
+            Explore premium cars, powerful SUVs and luxury
+            vehicles at amazing prices.
+          </p>
+
+          <div className="hero-buttons">
+
+            <a href="#cars">
+              Explore Cars 🚗
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="cars-section" id="cars">
+
+        <div className="section-heading">
+
+          <p>OUR COLLECTION</p>
+
+          <h2>
+            Featured <span>Cars</span>
+          </h2>
+
           <p>
-            Explore the best cars with amazing prices and features.
-            Choose your perfect car today.
+            Choose from our premium collection of vehicles.
           </p>
 
         </div>
 
-        <div className="hero-image">
-          <img
-            src="https://i.pinimg.com/736x/bf/33/c1/bf33c19b443f7a54488d30c96c9a609e.jpg"
-            alt="Luxury Car"
-          />
-        </div>
-      </section>
-      <section className="cars-section">
-        <h2>Popular Cars</h2>
+        <CarCards />
 
-        <div className="car-container">
-          <CarCards />
-        </div>
       </section>
+
       <Footer />
 
-    </div> 
-    )
+    </div>
+  );
 }
+
 export default Home;

@@ -1,92 +1,56 @@
 import "../CSS/About.css";
 import Header from "../Components/Header.jsx";
-import Footer from "../Components/Footer.jsx";
 
 function About() {
   return (
-    <>
+    <div className="about-page">
       <Header />
 
-      <main className="about-page">
+      <div className="about-container">
 
-        <section className="about-hero">
-          <h1>About Us</h1>
-          <p>
-            Welcome to CAR 24 — your trusted platform for finding
-            the right car at the right price.
-          </p>
-        </section>
+        <h1>About AutoDrive 🚗</h1>
 
-        <section className="about-content">
+        <p>
+          Welcome to AutoDrive! We are a simple and trusted car
+          platform where you can explore different cars and find
+          your dream car.
+        </p>
 
-          <div className="about-text">
-            <h2>Who We Are</h2>
+        <p>
+          Our goal is to provide you with good quality cars,
+          reasonable prices and an easy car shopping experience.
+        </p>
 
-            <p>
-              CAR 24 is a modern car platform designed to make buying
-              and exploring cars simple, fast and convenient.
-            </p>
+        <div className="about-box">
 
-            <p>
-              We provide users with a wide range of cars and useful
-              information so they can make better decisions before
-              purchasing a vehicle.
-            </p>
-
-            <p>
-              Our goal is to provide a simple and reliable car-buying
-              experience for everyone.
-            </p>
+          <div>
+            <h2>100+</h2>
+            <p>Cars</p>
           </div>
 
-          <div className="about-card">
-            <div className="car-icon">🚗</div>
-            <h2>CAR 24</h2>
-            <p>
-              Making your car search easier and smarter.
-            </p>
+          <div>
+            <h2>500+</h2>
+            <p>Customers</p>
           </div>
 
-        </section>
-
-        <section className="why-us">
-          <h2>Why Choose CAR 24?</h2>
-
-          <div className="features">
-
-            <div className="feature">
-              <div className="feature-icon">🚘</div>
-              <h3>Wide Range of Cars</h3>
-              <p>
-                Explore different cars according to your needs
-                and budget.
-              </p>
-            </div>
-
-            <div className="feature">
-              <div className="feature-icon">💰</div>
-              <h3>Best Prices</h3>
-              <p>
-                Find cars at competitive and affordable prices.
-              </p>
-            </div>
-
-            <div className="feature">
-              <div className="feature-icon">🔒</div>
-              <h3>Trusted Platform</h3>
-              <p>
-                We focus on providing a simple and reliable
-                experience.
-              </p>
-            </div>
-
+          <div>
+            <h2>10+</h2>
+            <p>Brands</p>
           </div>
-        </section>
 
-      </main>
+        </div>
 
-      <Footer />
-    </>
+        <h2>Why Choose AutoDrive?</h2>
+
+        <ul>
+          <li>🚗 Wide range of cars</li>
+          <li>💰 Affordable prices</li>
+          <li>⭐ Quality vehicles</li>
+          <li>🛡️ Trusted service</li>
+        </ul>
+
+      </div>
+    </div>
   );
 }
 

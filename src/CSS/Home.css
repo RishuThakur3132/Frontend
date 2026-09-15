@@ -1,0 +1,90 @@
+.hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 15, 25, 0.95),
+      rgba(10, 15, 25, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 700px;
+  color: white;
+}
+
+.hero-small {
+  color: #ff4d5a;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 7vw, 80px);
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #ff4d5a;
+}
+
+.hero-description {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #e5e7eb;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.hero-buttons a {
+  padding: 15px 25px;
+  border-radius: 8px;
+  background: #e63946;
+  color: white;
+  font-weight: 700;
+}
+
+.hero-buttons a:last-child {
+  background: white;
+  color: #111827;
+}
+
+.cars-section {
+  padding: 80px 6%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading > p:first-child {
+  color: #e63946;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.section-heading h2 span {
+  color: #e63946;
+}
+
+.section-heading p:last-child {
+  color: #6b7280;
+}

@@ -1,176 +1,139 @@
-.cars-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 30px;
-
+.cars-grid {
+  max-width: 1400px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-
-  box-sizing: border-box;
+  gap: 28px;
 }
 
 .car-card {
-  width: 100%;
-  background: #ffffff;
-
-  border: 1px solid #e5e7eb;
+  background: white;
   border-radius: 18px;
   overflow: hidden;
-
-  box-sizing: border-box;
-
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.car-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
-}
-
-.car-image-box {
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-  background: #f3f4f6;
-}
-
-.car-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-
-  transition: 0.4s;
-}
-
-.car-card:hover .car-image {
-  transform: scale(1.06);
-}
-
-.car-details {
-  padding: 22px;
-}
-
-.car-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.car-header h2 {
-  margin: 0;
-  font-size: 23px;
-  color: #172033;
-}
-
-.car-details h3 {
-  margin: 8px 0;
-  font-size: 20px;
-  color: #4d5665;
-}
-
-.year {
-  margin: 5px 0 15px;
-  color: #8a93a1;
-}
-
-.car-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.car-info span {
-  padding: 7px 9px;
-  background: #f5f7fa;
-  border: 1px solid #e8ebef;
-  border-radius: 7px;
-  font-size: 12px;
-  color: #596273;
-}
-
-.location,
-.engine,
-.power {
-  margin: 8px 0;
-  color: #707987;
-  font-size: 13px;
-}
-
-.price {
-  margin: 18px 0;
-  color: #174ea6;
-  font-size: 25px;
-  font-weight: 700;
-}
-
-/* Buttons */
-
-.car-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.buy-btn,
-.cart-btn {
-  flex: 1;
-  padding: 12px 8px;
-  border-radius: 9px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
-.buy-btn {
+.car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+.car-image-box {
+  height: 230px;
+  position: relative;
+  background: #f1f3f5;
+}
+
+.car-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #e63946;
+  color: white;
+  padding: 7px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.car-content {
+  padding: 22px;
+}
+
+.car-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.car-title h2 {
+  font-size: 21px;
+}
+
+.car-title p {
+  color: #777;
+  margin-top: 5px;
+}
+
+.rating {
+  background: #fff4d6;
+  color: #9a6500;
+  padding: 7px 10px;
+  border-radius: 8px;
+  height: fit-content;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.price {
+  color: #e63946;
+  font-size: 25px;
+  margin: 18px 0;
+}
+
+.car-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.location {
+  margin: 18px 0;
+  color: #6b7280;
+}
+
+.card-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.card-buttons button {
   border: none;
-  background: #174ea6;
+  padding: 13px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.details-btn {
+  background: #111827;
   color: white;
 }
 
-.buy-btn:hover {
-  background: #0d3b82;
+.cart-btn {
+  background: #e63946;
+  color: white;
 }
 
-.cart-btn {
-  border: 1.5px solid #174ea6;
-  background: white;
-  color: #174ea6;
+.details-btn:hover {
+  background: #374151;
 }
 
 .cart-btn:hover {
-  background: #eaf2ff;
+  background: #c92f3b;
 }
 
-/* Tablet */
-
-@media (max-width: 900px) {
-  .cars-container {
+@media (max-width: 1050px) {
+  .cars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
-
-@media (max-width: 600px) {
-  .cars-container {
+@media (max-width: 650px) {
+  .cars-grid {
     grid-template-columns: 1fr;
-    padding: 25px 15px;
   }
 
-  .car-image-box {
-    height: 220px;
-  }
-
-  .car-buttons {
-    flex-direction: column;
-  }
-
-  .buy-btn,
-  .cart-btn {
-    width: 100%;
+  .cars-section {
+    padding: 50px 20px;
   }
 }

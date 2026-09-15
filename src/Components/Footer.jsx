@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "../CSS/Footer.css";
 
 function Footer() {
@@ -7,62 +6,51 @@ function Footer() {
 
       <div className="footer-container">
 
-        <div className="footer-column">
-          <div className="footer-logo">
-             <span>CAR 24</span>
-          </div>
+        {/* Logo / About */}
+        <div className="footer-box">
+          <h2>🚗 Car 24</h2>
 
           <p>
             Find your dream car with Car24.
-            We provide quality cars at the best prices.
+            Explore quality cars at the best prices.
           </p>
-
-          <div className="social-icons">
-            <span>f</span>
-            <span>𝕏</span>
-            <span>◎</span>
-            <span>▶</span>
-          </div>
         </div>
 
-        <div className="footer-column">
+        {/* Quick Links */}
+        <div className="footer-box">
           <h3>Quick Links</h3>
 
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact</Link>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/cart">Cart</a>
         </div>
 
-        <div className="footer-column">
-          <h3>Our Services</h3>
+        {/* Services */}
+        <div className="footer-box">
+          <h3>Services</h3>
 
-          <Link to="/cars">Buy a Car</Link>
-          <Link to="/cars">Sell a Car</Link>
-          <Link to="/cars">Car Finance</Link>
-          <Link to="/cars">Test Drive</Link>
+          <p>🚗 Buy Cars</p>
+          <p>💰 Best Prices</p>
+          <p>⭐ Quality Cars</p>
+          <p>🛡️ Trusted Service</p>
         </div>
 
-        <div className="footer-column">
+        {/* Contact */}
+        <div className="footer-box">
           <h3>Contact Us</h3>
 
-          <p>📍 Mohali, Punjab, India</p>
           <p>📞 +91 98765 43210</p>
-          <p>✉️ support@car24.com</p>
+          <p>📧 car24@gmail.com</p>
+          <p>📍 India</p>
         </div>
 
       </div>
 
       <div className="footer-bottom">
-
         <p>
           © 2026 Car24. All Rights Reserved.
         </p>
-
-        <div>
-          <span>Privacy Policy</span>
-          <span>Terms & Conditions</span>
-        </div>
-
       </div>
 
     </footer>

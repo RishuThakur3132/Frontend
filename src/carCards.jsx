@@ -1,71 +1,126 @@
 import { useNavigate } from "react-router-dom";
 import "./CSS/CarCards.css";
 import { car } from "./cars.js";
+import { useContext } from "react";
+import { cartContext } from "./Context/carContext.jsx";
+import { toast } from "react-toastify";
 
 function CarCards() {
+
   const navigate = useNavigate();
 
+  const { cart, dispatch } = useContext(cartContext);
+
+  const addToCart = (item) => {
+
+    const exists = cart.find(
+      (car) => car.id === item.id
+    );
+
+    if (exists) {
+      toast.info("Car already added to cart 🚗");
+      return;
+    }
+
+    dispatch({
+      type: "ADD_TO_CART",
+      product: item
+    });
+
+    toast.success(`${item.brand} ${item.model} added to cart 🛒`);
+  };
+
   return (
-    <>
-      {car.map((car) => (
-        <div className="car-card" key={car.id}>
+    <div className="cars-grid">
+
+      {car.map((item) => (
+
+        <div className="car-card" key={item.id}>
 
           <div className="car-image-box">
+
             <img
-              src={car.image}
-              alt={`${car.brand} ${car.model}`}
-              className="car-image"
+              src={item.image}
+              alt={`${item.brand} ${item.model}`}
+              onError={(e) => {
+                e.target.src =
+                  "https://via.placeholder.com/600x400?text=Car+Image";
+              }}
             />
+
+            {item.isFeatured && (
+              <span className="featured">
+                Featured
+              </span>
+            )}
+
           </div>
 
-          <div className="car-details">
+          <div className="car-content">
 
-            <div className="car-header">
-              <h2>{car.brand}</h2>
+            <div className="car-title">
+
+              <div>
+                <h2>
+                  {item.brand} {item.model}
+                </h2>
+
+                <p>{item.year}</p>
+              </div>
 
               <span className="rating">
-                ⭐ {car.rating}
+                ⭐ {item.rating}
               </span>
+
             </div>
 
-            <h3>{car.model}</h3>
-
-            <p className="year">
-              {car.year}
-            </p>
+            <h3 className="price">
+              ₹ {item.price}
+            </h3>
 
             <div className="car-info">
-              <span>⛽ {car.fuelType}</span>
-              <span>⚙️ {car.transmission}</span>
-              <span>🚙 {car.bodyType}</span>
+
+              <span>⛽ {item.fuelType}</span>
+
+              <span>⚙️ {item.transmission}</span>
+
+              <span>🛣️ {item.mileage} km</span>
+
+              <span>👥 {item.seats} Seats</span>
+
             </div>
 
             <p className="location">
-              📍 {car.location}
+              📍 {item.location}, {item.state}
             </p>
 
-            <p className="engine">
-              🔧 {car.engine}
-            </p>
+            <div className="card-buttons">
 
-            <p className="power">
-              ⚡ {car.horsepower} HP
-            </p>
+              <button
+                className="details-btn"
+                onClick={() =>
+                  navigate(`/details/${item.id}`)
+                }
+              >
+                View Details
+              </button>
 
-            <div className="price">
-              ₹ {car.price}
-            </div>
-
-            <div className="car-buttons">
-              <button onClick={() => navigate(`Details/${car.id}`)}
-              className="buy-btn"> Buy Now</button>
+              <button
+                className="cart-btn"
+                onClick={() => addToCart(item)}
+              >
+                🛒 Add Cart
+              </button>
 
             </div>
 
           </div>
+
         </div>
+
       ))}
-    </>
+
+    </div>
   );
 }
 

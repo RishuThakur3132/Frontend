@@ -16,89 +16,107 @@ function Header() {
   };
 
   return (
-    <div className="home-page">
-      <nav className="navbar">
+    <header className="navbar">
 
-        <div className="logo">
-          <Link
+      {/* Logo */}
+      <div className="logo">
+        <Link to="/">
+          <span className="logo-car">CAR</span>
+          <span className="logo-24"> 24</span>
+        </Link>
+      </div>
+
+      {/* Navigation */}
+      <ul className="nav-links">
+
+        <li>
+          <NavLink
             to="/"
-            style={{
-              textDecoration: "none",
-              color: "white",
-              fontSize: "120%",
-            }}
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
           >
-            Car 24
-          </Link>
-        </div>
+            🏠 Home
+          </NavLink>
+        </li>
 
-        <div className="car-animation"></div>
+        <li>
+          <NavLink
+            to="/Contact"
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
+          >
+            📞 Contact
+          </NavLink>
+        </li>
 
-        <ul className="nav-links">
+        <li>
+          <NavLink
+            to="/About"
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
+          >
+            ℹ️ About
+          </NavLink>
+        </li>
 
-          <li className="icon">
+        <li>
+          <NavLink
+            to="/Cart"
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
+          >
+            🛒 Cart
+          </NavLink>
+        </li>
+
+        {/* Login / Profile */}
+        {!isLogged ? (
+          <li>
             <NavLink
-              to="/"
+              to="/login"
               className={({ isActive }) =>
                 isActive ? "nav-item active" : "nav-item"
               }
             >
-              Home
+              🔐 Login / Signup
             </NavLink>
           </li>
-
-          <li className="icon">
-            <NavLink
-              to="/Contact"
-              className={({ isActive }) =>
-                isActive ? "nav-item active" : "nav-item"
-              }
-            >
-              Contact
-            </NavLink>
-          </li>
-
-          <li className="icon">
-            <NavLink
-              to="/About"
-              className={({ isActive }) =>
-                isActive ? "nav-item active" : "nav-item"
-              }
-            >
-              About
-            </NavLink>
-          </li>
-
-          {!isLogged ? (
-            <li className="icon">
+        ) : (
+          <>
+            <li>
               <NavLink
-                to="/login"
+                to="/profile"
                 className={({ isActive }) =>
                   isActive ? "nav-item active" : "nav-item"
                 }
               >
-                Login / Signup
+                👤 Profile
               </NavLink>
             </li>
-          ) : (
-            <>
-              <li className="icon">
-                <NavLink
-                  to="/profile"
-                  className={({ isActive }) =>
-                    isActive ? "nav-item active" : "nav-item"
-                  }
-                >
-                  Profile
-                </NavLink>
-              </li>
-            </>
-          )}
 
-        </ul>
+            <li>
+              <button className="logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+          </>
+        )}
 
-      </nav>
-    </div>
+      </ul>
+
+      {/* Right Side Button */}
+      <button
+        className="sell-car-btn"
+        onClick={() => navigate("/cars")}
+      >
+        🚗 Browse Cars
+      </button>
+
+    </header>
   );
 }
 
