@@ -6,8 +6,8 @@
   background:
     linear-gradient(
       90deg,
-      rgba(10, 15, 25, 0.95),
-      rgba(10, 15, 25, 0.55)
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.55)
     ),
     url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
     center/cover;
@@ -19,7 +19,7 @@
 }
 
 .hero-small {
-  color: #ff4d5a;
+  color: #26ff0e;
   font-weight: 800;
   letter-spacing: 3px;
   margin-bottom: 20px;
@@ -51,7 +51,7 @@
 .hero-buttons a {
   padding: 15px 25px;
   border-radius: 8px;
-  background: #e63946;
+  background: #c42a37;
   color: white;
   font-weight: 700;
 }
@@ -71,7 +71,7 @@
 }
 
 .section-heading > p:first-child {
-  color: #e63946;
+  color: #e33342;
   font-weight: 800;
   letter-spacing: 2px;
 }
@@ -82,7 +82,7 @@
 }
 
 .section-heading h2 span {
-  color: #e63946;
+  color: #000000;
 }
 
 .section-heading p:last-child {

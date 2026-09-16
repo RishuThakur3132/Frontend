@@ -1,173 +1,109 @@
-* {
-  box-sizing: border-box;
-}
-
 .page-not-found {
-  min-height: 80vh;
-
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-
-  background: #ffffff;
-
-  padding: 50px 20px;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa, #e8edf3);
+  font-family: Arial, sans-serif;
 }
 
-.not-found-container {
+.error-card {
   width: 100%;
-  max-width: 850px;
-
+  max-width: 600px;
   text-align: center;
+  background: #ffffff;
+  padding: 60px 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
-
-/* ================= 404 ================= */
-
-.illustration {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 5px;
-
-  height: 280px;
-
-  margin-bottom: 25px;
+.car-icon {
+  font-size: 70px;
+  margin-bottom: 10px;
 }
 
-.number {
-  font-size: 210px;
-
+.error-card h1 {
+  margin: 0;
+  font-size: 110px;
+  font-weight: 800;
   line-height: 1;
-
-  font-weight: 900;
-
-  color: #0c0c0c;
+  color: #e63946;
 }
 
-
-/* ================= ZERO ================= */
-
-.zero {
-  width: 150px;
-  height: 150px;
-
-  border: 15px solid #030303;
-
-  border-radius: 50%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
+.error-card h2 {
+  margin: 15px 0 10px;
+  font-size: 32px;
+  color: #222;
 }
 
-.zero-inner {
-  width: 65px;
-  height: 65px;
-
-  border-radius: 50%;
-
-  background: white;
-}
-
-
-/* ================= HEADING ================= */
-
-.not-found-container h1 {
-  margin: 10px 0 15px;
-
-  font-size: 48px;
-
-  font-weight: 700;
-
-  color: #101828;
-}
-
-
-/* ================= TEXT ================= */
-
-.not-found-container p {
-  margin: 0 0 30px;
-
-  font-size: 17px;
-
-  line-height: 1.7;
-
-  color: #98a2b3;
-}
-
-
-/* ================= BUTTON ================= */
-
-.home-button {
-  display: inline-block;
-
-  padding: 15px 38px;
-
-  background: #060606;
-
-  color: white;
-
-  text-decoration: none;
-
-  border-radius: 30px;
-
+.error-card p {
+  max-width: 450px;
+  margin: 0 auto 30px;
   font-size: 16px;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
-
-  transition: all 0.3s ease;
+  line-height: 1.7;
+  color: #777;
 }
 
-.home-button:hover {
-  background: #070707;
+.error-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
+.error-buttons button {
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  background: #e63946;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.error-buttons button:hover {
+  background: #c92535;
   transform: translateY(-3px);
-
-  box-shadow: 0 8px 20px rgba(32, 201, 151, 0.25);
 }
 
+.error-buttons .back-btn {
+  background: #222;
+}
 
-/* ================= MOBILE ================= */
+.error-buttons .back-btn:hover {
+  background: #444;
+}
 
+/* Mobile */
 @media (max-width: 600px) {
-
-  .illustration {
-    height: 180px;
+  .error-card {
+    padding: 45px 20px;
   }
 
-  .number {
-    font-size: 120px;
+  .car-icon {
+    font-size: 55px;
   }
 
-  .zero {
-    width: 90px;
-    height: 90px;
-
-    border-width: 10px;
+  .error-card h1 {
+    font-size: 80px;
   }
 
-  .zero-inner {
-    width: 40px;
-    height: 40px;
+  .error-card h2 {
+    font-size: 25px;
   }
 
-  .not-found-container h1 {
-    font-size: 32px;
-  }
-
-  .not-found-container p {
+  .error-card p {
     font-size: 14px;
   }
 
-  .home-button {
-    padding: 13px 30px;
+  .error-buttons {
+    flex-direction: column;
+  }
+
+  .error-buttons button {
+    width: 100%;
   }
 }
