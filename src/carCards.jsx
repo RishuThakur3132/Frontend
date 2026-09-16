@@ -6,28 +6,28 @@ import { cartContext } from "./Context/carContext.jsx";
 import { toast } from "react-toastify";
 
 function CarCards() {
-
   const navigate = useNavigate();
 
   const { cart, dispatch } = useContext(cartContext);
 
-  const addToCart = (item) => {
-
+  // Buy Now
+  const buyNow = (item) => {
     const exists = cart.find(
       (car) => car.id === item.id
     );
 
-    if (exists) {
-      toast.info("Car already added to cart 🚗");
-      return;
+    if (!exists) {
+      dispatch({
+        type: "ADD_TO_CART",
+        product: item,
+      });
     }
 
-    dispatch({
-      type: "ADD_TO_CART",
-      product: item
-    });
+    toast.success(
+      `${item.brand} ${item.model} selected 🚗`
+    );
 
-    toast.success(`${item.brand} ${item.model} added to cart 🛒`);
+    navigate("/checkout");
   };
 
   return (
@@ -37,6 +37,7 @@ function CarCards() {
 
         <div className="car-card" key={item.id}>
 
+          {/* Image */}
           <div className="car-image-box">
 
             <img
@@ -56,8 +57,10 @@ function CarCards() {
 
           </div>
 
+          {/* Content */}
           <div className="car-content">
 
+            {/* Title */}
             <div className="car-title">
 
               <div>
@@ -74,10 +77,24 @@ function CarCards() {
 
             </div>
 
-            <h3 className="price">
-              ₹ {item.price}
-            </h3>
+            {/* Price */}
+            <div className="price-action">
 
+              <div className="price-container">
+
+                <h3>
+                  ₹{(Number(item.price) / 100000).toFixed(2)} Lakh
+                </h3>
+
+                <p>
+                  Ex-Showroom Price
+                </p>
+
+              </div>
+
+            </div>
+
+            {/* Car Information */}
             <div className="car-info">
 
               <span>⛽ {item.fuelType}</span>
@@ -90,10 +107,12 @@ function CarCards() {
 
             </div>
 
+            {/* Location */}
             <p className="location">
               📍 {item.location}, {item.state}
             </p>
 
+            {/* Buttons */}
             <div className="card-buttons">
 
               <button
@@ -106,10 +125,10 @@ function CarCards() {
               </button>
 
               <button
-                className="cart-btn"
-                onClick={() => addToCart(item)}
+                className="buy-btn"
+                onClick={() => buyNow(item)}
               >
-                🛒 Add Cart
+                🚗 Buy Now
               </button>
 
             </div>

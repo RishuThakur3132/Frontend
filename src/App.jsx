@@ -9,6 +9,7 @@ import PageNotFound from "./Pages/PageNotFound.jsx";
 import Profile from "./Pages/Profile.jsx";
 import Details from "./Pages/Details.jsx";
 import Cart from "./Pages/Cart.jsx";
+import Checkout from "./Pages/checkOut.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
     <Route path="/Profile" element={<Profile/>}/>
     <Route path="/Details/:id" element={<Details />} />
     <Route path="/Cart" element={<Cart />} />
+    <Route path="/checkout" element={<Checkout />} />
    </Routes>
     </div>
 

@@ -5,44 +5,49 @@ import { useNavigate } from "react-router-dom";
 import "../CSS/Cart.css";
 
 function Cart() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
   const { cart, dispatch } = useContext(cartContext);
 
   // Increase quantity
-  const increaseQuantity = (id, quantity) => {
+  const increaseQuantity = (id) => {
     dispatch({
-      type: "UPDATE_CART",
+      type: "INCREASE",
       id: id,
-      quantity: quantity + 1,
     });
   };
 
   // Decrease quantity
-  const decreaseQuantity = (id, quantity) => {
-    if (quantity > 1) {
-      dispatch({
-        type: "UPDATE_CART",
-        id: id,
-        quantity: quantity - 1,
-      });
-    }
-  };
-
-  // Remove item
-  const removeItem = (id) => {
+  const decreaseQuantity = (id) => {
     dispatch({
-      type: "DELETE_CART",
+      type: "DECREASE",
       id: id,
     });
   };
 
-  // Calculate total price
+  // Delete single car
+  const removeItem = (id) => {
+    dispatch({
+      type: "DELETE",
+      id: id,
+    });
+  };
+
+  // // Clear complete cart
+  // const clearCart = () => {
+  //   dispatch({
+  //     type: "CLEAR",
+  //   });
+  // };
+
+  // Total price
   const totalPrice = cart.reduce(
-    (total, item) => total + Number(item.price) * item.quantity,
+    (total, item) =>
+      total + Number(item.price || 0) * item.quantity,
     0
   );
 
-  // Calculate total items
+  // Total cars
   const totalItems = cart.reduce(
     (total, item) => total + item.quantity,
     0
@@ -50,33 +55,63 @@ function Cart() {
 
   return (
     <div className="cart-page">
+
       <Header />
 
-      <h1 className="cart-title">My Cart</h1>
+      <h1 className="cart-title">
+        My Cart 🛒
+      </h1>
 
       {cart.length === 0 ? (
+
         <div className="empty-cart">
-          <h2>Cart is Empty 🛒</h2>
-          <p>Add some cars to your cart to see them here.</p>
+
+          <h2>
+            Cart is Empty 🛒
+          </h2>
+
+          <p>
+            Add some cars to your cart to see them here.
+          </p>
+
+          <button
+            className="shop-btn"
+            onClick={() => navigate("/")}
+          >
+            Browse Cars
+          </button>
+
         </div>
+
       ) : (
+
         <div className="cart-container">
 
-          {/* Cart Items */}
+          {/* CART ITEMS */}
+
           <div className="cart-items">
 
             {cart.map((item) => (
-              <div className="cart-item" key={item.id}>
+
+              <div
+                className="cart-item"
+                key={item.id}
+              >
 
                 {/* Image */}
+
                 <div className="cart-image">
+
                   <img
                     src={item.image}
                     alt={`${item.brand} ${item.model}`}
                   />
+
                 </div>
 
+
                 {/* Details */}
+
                 <div className="cart-details">
 
                   <h2>
@@ -88,35 +123,46 @@ function Cart() {
                   </p>
 
                   <p className="car-price">
-                    ₹{Number(item.price).toLocaleString("en-IN")}
+                    ₹
+                    {Number(item.price || 0).toLocaleString(
+                      "en-IN"
+                    )}
                   </p>
 
+
                   {/* Quantity */}
+
                   <div className="quantity-section">
 
-                    <span>Quantity:</span>
+                    <span>
+                      Quantity:
+                    </span>
 
                     <div className="quantity-controls">
 
+                      {/* Decrease */}
+
                       <button
                         onClick={() =>
-                          decreaseQuantity(
-                            item.id,
-                            item.quantity
-                          )
+                          decreaseQuantity(item.id)
                         }
                       >
-                        -
+                        −
                       </button>
 
-                      <span>{item.quantity}</span>
+
+                      {/* Quantity */}
+
+                      <span>
+                        {item.quantity}
+                      </span>
+
+
+                      {/* Increase */}
 
                       <button
                         onClick={() =>
-                          increaseQuantity(
-                            item.id,
-                            item.quantity
-                          )
+                          increaseQuantity(item.id)
                         }
                       >
                         +
@@ -126,75 +172,126 @@ function Cart() {
 
                   </div>
 
-                  {/* Remove */}
+
+                  {/* Delete */}
+
                   <button
                     className="remove-btn"
-                    onClick={() => removeItem(item.id)}
+                    onClick={() =>
+                      removeItem(item.id)
+                    }
                   >
-                    Remove
+                    🗑 Remove
                   </button>
 
                 </div>
 
+
                 {/* Item Total */}
+
                 <div className="item-total">
 
-                  <p>Total</p>
+                  <p>
+                    Total
+                  </p>
 
                   <h3>
                     ₹
                     {(
-                      Number(item.price) * item.quantity
+                      Number(item.price || 0) *
+                      item.quantity
                     ).toLocaleString("en-IN")}
                   </h3>
 
                 </div>
 
               </div>
+
             ))}
 
           </div>
 
-          {/* Cart Summary */}
+
+          {/* ORDER SUMMARY */}
+
           <div className="cart-summary">
 
-            <h2>Order Summary</h2>
+            <h2>
+              Order Summary
+            </h2>
+
 
             <div className="summary-row">
-              <span>Total Cars</span>
-              <span>{totalItems}</span>
-            </div>
 
-            <div className="summary-row">
-              <span>Subtotal</span>
               <span>
-                ₹{totalPrice.toLocaleString("en-IN")}
+                Total Cars
               </span>
+
+              <span>
+                {totalItems}
+              </span>
+
             </div>
 
+
             <div className="summary-row">
-              <span>Delivery</span>
-              <span>Free</span>
+
+              <span>
+                Subtotal
+              </span>
+
+              <span>
+                ₹
+                {totalPrice.toLocaleString("en-IN")}
+              </span>
+
             </div>
+
+
+            <div className="summary-row">
+
+              <span>
+                Delivery
+              </span>
+
+              <span>
+                Free
+              </span>
+
+            </div>
+
 
             <hr />
 
+
             <div className="summary-total">
-              <span>Total</span>
+
+              <span>
+                Total
+              </span>
+
               <strong>
-                ₹{totalPrice.toLocaleString("en-IN")}
+                ₹
+                {totalPrice.toLocaleString("en-IN")}
               </strong>
+
             </div>
 
-            <button className="checkout-btn"
-             onClick={()=> navigate("/Checkout")}>
-             Proceed to Checkout
+
+            {/* Checkout */}
+
+            <button
+              className="checkout-btn"
+              onClick={() =>
+                navigate("/checkout")
+              }
+            >
+              Proceed to Checkout →
             </button>
-
           </div>
-
         </div>
       )}
+
     </div>
   );
 }

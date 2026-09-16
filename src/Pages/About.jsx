@@ -48,7 +48,6 @@ function About() {
           <li>⭐ Quality vehicles</li>
           <li>🛡️ Trusted service</li>
         </ul>
-
       </div>
     </div>
   );

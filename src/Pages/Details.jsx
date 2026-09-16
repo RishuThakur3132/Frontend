@@ -101,20 +101,6 @@ function Details() {
               <span>{selectedCar.transmission}</span>
             </div>
 
-            <div>
-              <strong>Engine</strong>
-              <span>{selectedCar.engine}</span>
-            </div>
-
-            <div>
-              <strong>Horsepower</strong>
-              <span>{selectedCar.horsepower} HP</span>
-            </div>
-
-            <div>
-              <strong>Mileage</strong>
-              <span>{selectedCar.mileage} KM</span>
-            </div>
 
             <div>
               <strong>Body</strong>

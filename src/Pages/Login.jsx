@@ -47,6 +47,7 @@ function Login() {
     <div className="login-page">
 
       <div className="login-box">
+    
 
         <h1>Login</h1>
 
@@ -82,7 +83,6 @@ function Login() {
           Don't have an account?{" "}
           <Link to="/signup">Sign Up</Link>
         </p>
-
       </div>
 
     </div>

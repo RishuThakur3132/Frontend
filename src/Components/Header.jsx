@@ -108,14 +108,6 @@ function Header() {
 
       </ul>
 
-      {/* Right Side Button */}
-      <button
-        className="sell-car-btn"
-        onClick={() => navigate("/cars")}
-      >
-        🚗 Browse Cars
-      </button>
-
     </header>
   );
 }
