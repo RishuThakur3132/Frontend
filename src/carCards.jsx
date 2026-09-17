@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./CSS/CarCards.css";
+import "./CSS/carCards.css";
 import { car } from "./cars.js";
 import { useContext } from "react";
 import { cartContext } from "./Context/carContext.jsx";

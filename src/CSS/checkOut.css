@@ -365,7 +365,7 @@
 
   border-radius: 10px;
 
-  background: #e63946;
+  background: #a5323c;
 
   color: white;
 
@@ -379,7 +379,7 @@
 }
 
 .place-order-btn:hover {
-  background: #c1121f;
+  background: #6e3337;
 
   transform: translateY(-2px);
 }

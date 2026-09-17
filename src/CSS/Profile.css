@@ -29,7 +29,7 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
 
-  background: #111827;
+  background: #dd1641;
   color: white;
 
   font-size: 14px;
@@ -66,9 +66,9 @@
   background:
     linear-gradient(
       135deg,
-      #111827,
-      #1f2937 55%,
-      #111827
+      #b64b4b,
+      #000000 55%,
+      #000000
     );
 
   color: white;

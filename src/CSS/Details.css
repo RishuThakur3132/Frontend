@@ -44,7 +44,7 @@
   position: absolute;
   top: 18px;
   left: 18px;
-  background: #ff6b00;
+  background: #ff0505;
   color: #ffffff;
   padding: 9px 16px;
   border-radius: 20px;
@@ -64,7 +64,7 @@
 
 .details-brand {
   margin: 0 0 8px;
-  color: #ff6b00;
+  color: #eb6709;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -180,7 +180,7 @@
 
 /* Add To Cart */
 .add-btn {
-  background: #ff6b00;
+  background: #ec0505;
   color: #ffffff;
 }
 

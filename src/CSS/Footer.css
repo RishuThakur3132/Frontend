@@ -1,7 +1,7 @@
 /* Footer */
 
 .footer {
-  background: #000000;
+  background: #2b3131;
   color: white;
   margin-top: 60px;
 }
@@ -30,11 +30,11 @@
 .footer-box h3 {
   font-size: 19px;
   margin-bottom: 20px;
-  color: #f7f710;
+  color: #00b7ff;
 }
 
 .footer-box p {
-  color: #cbd5e1;
+  color: #ffffff;
   line-height: 1.7;
   margin: 8px 0;
 }

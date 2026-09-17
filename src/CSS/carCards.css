@@ -255,13 +255,13 @@
 /* View Details */
 
 .details-btn {
-  background: #2857bc;
+  background: #0151ff;
 
   color: rgb(250, 247, 247);
 }
 
 .details-btn:hover {
-  background: #000000;
+  background: #cc0808;
 
   transform: translateY(-2px);
 }
@@ -270,7 +270,7 @@
 /* buy Now */
 
 .buy-btn { 
-  background: #0e0d0d; 
+  background: #000000; 
   color: #ffffff;
    border: none;
     padding: 12px 10px;
@@ -282,7 +282,7 @@
          } 
          
          .buy-btn:hover {
-           background: #c1121f;
+           background: #da0816;
             transform: translateY(-2px); 
         }
 
